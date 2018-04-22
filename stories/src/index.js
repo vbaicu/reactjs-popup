@@ -6,6 +6,7 @@ import { Centred } from "story-router";
 import PopupElementStory from "./PopupElement";
 import PopupFuncStory from "./PopupFunc";
 import PopupInputFocusStory from "./PopupInputFocus";
+import AnimatedModalStory from "./AnimatedModal";
 import ModalStory from "./Modal";
 import Menu from "./Menu";
 import ControlledPopup from "./Controlledpopup";
@@ -44,5 +45,6 @@ export default [
   PopupFuncStory,
   PopupInputFocusStory,
   PopupElementStory,
-  CellTablePopupStory
+  CellTablePopupStory,
+  AnimatedModalStory
 ];

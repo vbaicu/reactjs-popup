@@ -1,8 +1,7 @@
 {
   "name": "reactjs-popup",
   "version": "1.1.0",
-  "description":
-    "React Popup Component - Modals,Tooltips and Menus —  All in one",
+  "description": "React Popup Component - Modals,Tooltips and Menus —  All in one",
   "main": "reactjs-popup.cjs.js",
   "module": "reactjs-popup.es.js",
   "jsnext:main": "reactjs-popup.es.js",
@@ -38,7 +37,7 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "story-router": "^0.0.1",
+    "story-router": "^1.0.0",
     "why-did-you-update": "^0.1.1"
   },
   "repository": {
@@ -62,5 +61,8 @@
   "bugs": {
     "url": "https://github.com/yjose/reactjs-popup/issues"
   },
-  "homepage": "https://react-popup.netlify.com/"
+  "homepage": "https://react-popup.netlify.com/",
+  "dependencies": {
+    "react-spring": "^4.1.3"
+  }
 }
