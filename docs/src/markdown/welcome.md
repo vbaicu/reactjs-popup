@@ -1,7 +1,7 @@
 ---
 title:  React Popup Component - Modals,Tooltips and Menus —  All in one
 description: A Simple React popup component.Use it as a tooltip,modal,sub-menu and match more ...
-components: 
+components:
   Demo: Demo
 ---
 
@@ -15,6 +15,7 @@ Reactjs-popup is a simple react popup component with a lot of benefits :
 * Modal, Tooltip, Menu : All in one 🏋️
 * Full style customization 👌
 * Easy to use. 🚀
+* IE 11 support.
 * All these clocks in at around 3 kB zipped. ⚡️
 
 Requires React >= 16.0
