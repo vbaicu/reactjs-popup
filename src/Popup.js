@@ -8,8 +8,8 @@ export default class Popup extends React.PureComponent {
   static defaultProps = {
     children: () => <span> Your Content Here !!</span>,
     trigger: null,
-    onOpen: () => {},
-    onClose: () => {},
+    onOpen: () => { },
+    onClose: () => { },
     defaultOpen: false,
     open: false,
     closeOnDocumentClick: true,
@@ -36,10 +36,11 @@ export default class Popup extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    this.setTriggerRef = r => (this.TriggerEl = r);
-    this.setContentRef = r => (this.ContentEl = r);
-    this.setArrowRef = r => (this.ArrowEl = r);
-    this.setHelperRef = r => (this.HelperEl = r);
+
+    this.TriggerEl = React.createRef();
+    this.ContentEl = React.createRef();
+    this.ArrowEl = React.createRef();
+    this.HelperEl = React.createRef();
     this.timeOut = 0;
   }
 
@@ -142,12 +143,12 @@ export default class Popup extends React.PureComponent {
     const childrenElementProps = {
       className: `popup-content ${className}`,
       style: Object.assign({}, popupContentStyle, contentStyle),
-      ref: this.setContentRef,
+      ref: this.ContentEl,
       onClick: e => {
         e.stopPropagation();
       }
     };
-    if (!modal && on.indexOf("hover")>=0) {
+    if (!modal && on.indexOf("hover") >= 0) {
       childrenElementProps.onMouseEnter = this.onMouseEnter;
       childrenElementProps.onMouseLeave = this.onMouseLeave;
     }
@@ -185,7 +186,7 @@ export default class Popup extends React.PureComponent {
         {arrow &&
           !modal && (
             <div
-              ref={this.setArrowRef}
+              ref={this.ArrowEl}
               style={Object.assign({}, styles.popupArrow, arrowStyle)}
             />
           )}
@@ -199,14 +200,14 @@ export default class Popup extends React.PureComponent {
   render() {
     const { overlayStyle, closeOnDocumentClick, on } = this.props;
     const { modal } = this.state;
-    const overlay = this.state.isOpen && !(on.indexOf("hover")>=0);
+    const overlay = this.state.isOpen && !(on.indexOf("hover") >= 0);
     const ovStyle = modal ? styles.overlay.modal : styles.overlay.tooltip;
     return [
       this.state.isOpen && (
         <div
           key="H"
           style={{ position: "absolute", top: "0px", left: "0px" }}
-          ref={this.setHelperRef}
+          ref={this.HelperEl}
         />
       ),
       overlay && (
@@ -221,7 +222,7 @@ export default class Popup extends React.PureComponent {
       ),
       this.state.isOpen && !modal && this.renderContent(),
       !!this.props.trigger && (
-        <Ref innerRef={this.setTriggerRef} key="R">
+        <Ref innerRef={this.TriggerEl} key="R">
           {this.renderTrigger()}
         </Ref>
       )
