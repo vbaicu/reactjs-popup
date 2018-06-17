@@ -1,10 +1,11 @@
 import React from "react";
 import Popup from "../../src/Popup";
 
+
 const Button = props => (
   <button {...props}> Button nested {props.open ? "open" : "close"} </button>
 );
-
+const con = true;
 const PopupElement = () => (
   <div>
     <div style={{ zIndex: "90" }}>
@@ -34,12 +35,17 @@ const Content = ({ close }) => (
       closeOnDocumentClick={true}
       trigger={<button>Button nested</button>}
     >
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptas
-        ex, blanditiis reiciendis dolor numquam pariatur facilis, labore, libero
-        nihil asperiores ae facilis quis commodi dolores, at enim. Deserunt qui,
-        officiis culpa optio numquam ullam pariatur voluptas tempora doloremque!
-      </div>
+      {con ? (
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptas
+          ex, blanditiis reiciendis dolor numquam pariatur facilis, labore,
+          libero nihil asperiores ae facilis quis commodi dolores, at enim.
+          Deserunt qui, officiis culpa optio numquam ullam pariatur voluptas
+          tempora doloremque!
+        </div>
+      ) : (
+        <span />
+      )}
     </Popup>
   </div>
 );

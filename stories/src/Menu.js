@@ -22,6 +22,8 @@ const Menu = () => (
         <div className="menu-item"> item 1</div>
         <div className="menu-item"> item 2</div>
         <div className="menu-item"> item 3</div>
+        <div className="menu-item"> item 2</div>
+        <div className="menu-item"> item 3</div>
         <Popup
           trigger={<div className="menu-item"> Sub Menu</div>}
           position="right top"
